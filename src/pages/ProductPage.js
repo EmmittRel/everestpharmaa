@@ -18,11 +18,16 @@ function ProductPage() {
 
   // For Alphabet Filter
   const [selectedAlphabet, setSelectedAlphabet] = useState("All");
+  const [selectedDivision, setSelectedDivision] = useState("All");
 
   // For category filter
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [showCategoryDropdown, setShowCategoryDropdown] = useState(false);
   const [categoryList, setCategoryList] = useState([]);
+
+  // For Division filter
+  const [showDivisionDropdown, setShowDivisionDropdown] = useState(false);
+  const [divisionList, setDivisionList] = useState([]);
 
   useEffect(() => {
     const client = contentful.createClient({
@@ -55,28 +60,48 @@ function ProductPage() {
 
   useEffect(() => {
     applyFilters();
-  }, [selectedCategory, selectedAlphabet, searchText]);
+  }, [selectedCategory, selectedDivision, selectedAlphabet, searchText]);
 
   const applyFilters = () => {
-    let filtered = products;
+    console.log("Selected Category:", selectedCategory);
+    console.log("Selected Division:", selectedDivision);
+    let filtered = [...products];
 
     if (selectedCategory !== "All") {
-      filtered = filtered.filter((product) => product.category === selectedCategory);
+      filtered = filtered.filter(
+        (product) => product.category === selectedCategory
+      );
     }
-  
+
+    if (selectedDivision !== "All") {
+      filtered = filtered.filter(
+        (product) => product.division === selectedDivision
+      );
+    }
+
     if (selectedAlphabet !== "All") {
       filtered = filtered.filter((product) =>
         product.title.toLowerCase().startsWith(selectedAlphabet.toLowerCase())
       );
     }
-  
+
     if (searchText) {
       filtered = filtered.filter((product) =>
         product.title.toLowerCase().includes(searchText.toLowerCase())
       );
     }
 
+    console.log("Filtered Products:", filtered);
     setFilteredProductsForTable(filtered);
+  };
+
+  const handleDivisionFilter = (division) => {
+    console.log("Selected Division:", division);
+    setSelectedDivision(division);
+    setShowDivisionDropdown(false);
+    setSearchText("");
+    setSelectedAlphabet("All"); // Reset alphabet filter
+    applyFilters();
   };
 
   const handleSearch = (event) => {
@@ -88,6 +113,13 @@ function ProductPage() {
     setSelectedAlphabet(alphabet === selectedAlphabet ? "All" : alphabet);
     setSearchText("");
   };
+
+  useEffect(() => {
+    const uniqueDivisions = Array.from(
+      new Set(products.map((product) => product.division))
+    );
+    setDivisionList(uniqueDivisions);
+  }, [products]);
 
   useEffect(() => {
     // Extract unique categories from your products
@@ -103,7 +135,7 @@ function ProductPage() {
     setShowCategoryDropdown(false);
     setSearchText("");
     setSelectedAlphabet("All"); // Reset alphabet filter
-    applyFilters(category);
+    applyFilters();
   };
 
   const alphabets = [
@@ -199,18 +231,34 @@ function ProductPage() {
                   )}
                 </div>
               </li>
-              <li
-                className="product-page__category-item"
-                // onClick={() => handleCategoryFilter("all")}
-              >
-                By Generics
+              
+              <li className="product-page__category-item">
+                <div className="category-dropdown-container">
+                  <span
+                    onClick={() =>
+                      setShowDivisionDropdown(!showDivisionDropdown)
+                    }
+                  >
+                    By Division
+                  </span>
+                  {showDivisionDropdown && (
+                    <ul className="category-dropdown">
+                      {divisionList.map((division) => (
+                        <li
+                          key={division}
+                          className={`product-page__category-item dropdown-item ${
+                            selectedDivision === division ? "active" : ""
+                          }`}
+                          onClick={() => handleDivisionFilter(division)}
+                        >
+                          {division}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
               </li>
-              <li
-                className="product-page__category-item"
-                // onClick={() => handleCategoryFilter("all")}
-              >
-                By Division
-              </li>
+              <li className="product-page__category-item">By Generics</li>
             </ul>
           </div>
           <div className="product__list">
