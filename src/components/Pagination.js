@@ -1,9 +1,7 @@
-import React, { useState } from "react";
-import '../components/ProductTable.css'
+import React from "react";
+import "../components/ProductTable.css";
 
-function Pagination({ currentPage, onPageChange, filteredProducts, productsPerPage }) {
-  const totalPages = Math.ceil((filteredProducts?.length || 0) / productsPerPage);
-
+function Pagination({ currentPage, onPageChange, productsPerPage }) {
   const handlePreviousPage = () => {
     if (currentPage > 1) {
       onPageChange(currentPage - 1);
@@ -11,29 +9,24 @@ function Pagination({ currentPage, onPageChange, filteredProducts, productsPerPa
   };
 
   const handleNextPage = () => {
-    if (currentPage < totalPages) {
-      onPageChange(currentPage + 1);
-    }
+    onPageChange(currentPage + 1);
   };
 
   return (
     <div className="pagination">
       <button
-        className={`pagination-button ${currentPage === 1 && "disabled"}`}
+        className="pagination-button"
         onClick={handlePreviousPage}
         disabled={currentPage === 1}
       >
         Previous
       </button>
       <span className="pagination-info">
-        Page {currentPage} of {totalPages}
+        Page {currentPage}
       </span>
       <button
-        className={`pagination-button ${
-          currentPage === totalPages && "disabled"
-        }`}
+        className="pagination-button"
         onClick={handleNextPage}
-        disabled={currentPage === totalPages}
       >
         Next
       </button>
