@@ -1,0 +1,175 @@
+.container {
+  max-width: 968px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.section {
+  padding: 6rem 0 2.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.section__title {
+  font-size: 1.9rem;
+  color: #000;
+  text-align: center;
+  text-transform: capitalize;
+  margin-bottom: 2rem;
+}
+
+.about__data {
+  text-align: center;
+}
+
+.about__container {
+  row-gap: 2.5rem;
+}
+
+.about__description {
+  font-size: 18px;
+  margin-bottom: 2rem;
+  text-align: justify;
+}
+
+.about__img {
+  display: flex;
+  column-gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.about__img-overlay {
+  overflow: hidden;
+}
+
+.about__img-one {
+  width: 160px;
+}
+
+.about__img-two {
+  width: 230px;
+}
+
+.about__img-one,
+.about__img-two {
+  transition: 0.3s;
+}
+
+.about__img-one:hover,
+.about__img-two:hover {
+  transform: scale(1.1);
+}
+
+.about__container {
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+
+.about__data,
+.about__title {
+  text-align: initial;
+}
+
+.about__title {
+  margin-bottom: 1.5rem;
+}
+
+.button {
+  display: inline-block;
+  background-color: #ff4500;
+  color: #fff;
+  padding: 1rem 2rem;
+  font-weight: semi-bold;
+  transition: 0.3s;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+.button:hover {
+  background-color: hsl(190, 64%, 15%);
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .about__img-two {
+    width: 290px;
+  }
+  .about__img-one {
+    width: 230px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .section {
+    padding: 7rem 0 2rem;
+  }
+
+  .about__container {
+    grid-template-columns: 1fr;
+    align-items: center;
+  }
+
+  .about__data,
+  .about__title {
+    text-align: initial;
+  }
+
+  .about__title {
+    margin-bottom: 1.5rem;
+  }
+
+  .about__description {
+    margin-bottom: 2rem;
+  }
+
+  .about__img {
+    display: none;
+  }
+
+  .about__img-overlay {
+    overflow: hidden;
+  }
+
+  .about__img-one,
+  .about__img-two {
+    transition: 0.3s;
+  }
+
+  .about__img-one:hover,
+  .about__img-two:hover {
+    transform: scale(1.1);
+  }
+
+  .button {
+    display: inline-block;
+    background-color: hsl(190, 64%, 22%);
+    color: #fff;
+    padding: 1rem 2rem;
+    font-weight: semi-bold;
+    transition: 0.3s;
+    text-decoration: none;
+  }
+
+  .button:hover {
+    background-color: hsl(190, 64%, 15%);
+  }
+
+  .section {
+    padding: 4.5rem 0 2.5rem;
+  }
+}

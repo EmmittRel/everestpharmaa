@@ -1,0 +1,57 @@
+small,
+.text_small {
+  font-size: 1em;
+  font-style: italic;
+  color: orangered;
+}
+
+.structure {
+  max-width: 992px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.headerr {
+  padding: 20px;
+  text-align: center;
+}
+
+.header-image {
+  max-width: 720px;
+  max-height: 400px;
+  overflow: hidden;
+  border-radius: 16px;
+  margin: 0 auto 40px auto;
+}
+
+.header-image > img {
+  max-width: 100%;
+}
+
+hr {
+  color: #131313;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+
+svg {
+  margin: 1px 10px 3px 10px;
+  padding: 0;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  padding: 20px;
+  text-align: justify;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+

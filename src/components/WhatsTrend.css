@@ -1,0 +1,72 @@
+
+.trend {
+  font-family: Montserrat, sans-serif;
+  margin: 2rem;
+  margin-bottom: 4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 0.3fr));
+  grid-gap: 2rem;
+  justify-content: center;
+}
+
+.card_trend {
+  overflow: hidden;
+  border: 1px solid #eeeeee;
+  box-shadow: 4px 4px #eeeeee;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: border 200ms ease-in, box-shadow 200ms ease-in;
+}
+
+.card__image {
+  height: 12rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card__title {
+  padding-left: 1rem;
+  padding-top: 1rem;
+}
+.date_trend{
+    padding-left: 1rem;
+    color: #7d7d7d;
+}
+.card__description {
+  padding: 0 1rem;
+}
+
+.card__link {
+  text-decoration: none;
+  padding: 1rem;
+  font-weight: bold;
+  color: #ff4500;
+}
+
+.card__link::after {
+  content: "\f061";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: relative;
+  left: 0.5rem;
+}
+
+.card_trend:hover {
+  border: 1px solid #ff4500;
+  box-shadow: 8px 8px #ff4500;
+}
+
+.card_trend:hover .card__link::after {
+  animation: arrow 1s ease-in-out infinite alternate;
+}
+
+@keyframes arrow {
+  0% {
+    left: 0.5rem;
+  }
+  100% {
+    left: 1.5rem;
+  }
+}

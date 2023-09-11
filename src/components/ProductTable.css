@@ -1,0 +1,76 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 130%;
+  }
+.product_link{
+  text-decoration: none;
+  color: orangered;
+}
+  th{
+    color: #003c71;
+  }
+  .pagination-button{
+    border: none;
+    background-color: #003c71;
+    color: #fff;
+    font-size: 16px;
+    margin: 10px 0px 5px 5px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  .pagination-button:hover{
+    background-color: orangered;
+  }
+  td, th {
+    border: 1px solid #dddddd;
+    font-size: 18px;
+    text-align: left;
+    padding: 8px;
+    line-height: 2;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #E3E3E7;
+  }
+
+  .link_link a{
+    text-decoration: none;
+    color: orangered;
+  }
+
+  .fa-arrow-right{
+    color: #fff;
+    font-size: 16px;
+  }
+
+  .fa-arrow-left{
+    color: #fff;
+    font-size: 16px;
+  }
+
+  @media (max-width: 768px) { /* You can adjust this breakpoint as needed */
+    table {
+      font-size: 8px; /* Decrease font size for smaller screens */
+      width: auto /* Adjusted width to fit the viewport */
+    }
+  
+    th, td {
+      padding: 5px; /* Reduce padding to save space */
+      line-height: 1.2; /* Adjust line height for readability */
+      font-size: 10px;
+    }
+  
+    .button_pagination {
+      font-size: 10px; /* Decrease font size for buttons */
+      padding: 4px; /* Reduce padding for buttons */
+    }
+
+    .fa-arrow-right{
+      font-size: 10px;
+    }
+  
+    .fa-arrow-left{
+      font-size: 10px;
+    }
+  }

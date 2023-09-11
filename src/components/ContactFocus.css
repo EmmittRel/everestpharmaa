@@ -1,0 +1,222 @@
+.contact_career {
+  width: 100%;
+  background-color: #fff;
+  color: #000;
+  margin-bottom: 30px;
+}
+
+#send {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  /* min-height: 100vh; */
+  /* padding: 30px 10%; */
+}
+.container .row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1400px;
+}
+.row #section1.col {
+  display: flex;
+  flex-direction: column;
+}
+.row #section1.left {
+  flex-basis: 35%;
+  min-width: 320px;
+  margin-right: 60px;
+}
+.row #section2.right {
+  flex-basis: 60%;
+  margin-left: 70px; /* Add left margin */
+  margin-right: 70px; /* Add right margin */
+}
+#section1.left .contact_header h2 {
+  position: relative;
+  display: inline-block;
+  font-size: 28px;
+  color: #000;
+  margin-bottom: 25px;
+  font-family: "Lato", sans-serif;
+}
+#section1.left .contact_header h2::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 1px;
+  background-color: #888;
+  top: 120%;
+  left: 0;
+}
+#section1.left .contact_header h2::after {
+  content: "";
+  position: absolute;
+  width: 25%;
+  height: 3px;
+  background-color: #ff4500;
+  top: calc(120% - 1px);
+  left: 0;
+}
+#section1.left .contact_header p {
+  font-size: 18px;
+  color: #000;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  padding-bottom: 22px;
+}
+#section1.left .contactInfo {
+  margin-bottom: 0px;
+  font-family: "Lato", sans-serif;
+}
+.contactInfo .icon_list {
+  display: flex;
+  align-items: center;
+  margin: 25px 0px;
+}
+
+.social_button a {
+  width: 35px;
+  height: 35px;
+  text-decoration: none;
+  text-align: center;
+  margin-right: 15px;
+  border-radius: 5px;
+  background-color: #ff4500;
+  transition: 0.4s;
+}
+.social_button a i {
+  color: #ddd;
+  font-size: 18px;
+  line-height: 35px;
+  border: 1px solid transparent;
+  transition-delay: 0.4s;
+}
+.social_button a:hover {
+  transform: translateY(-5px);
+  background-color: #2e2e2e;
+  color: #ff4500;
+  border: 1px solid #ff4500;
+}
+.social_button a:hover i {
+  color: #ff4500;
+}
+
+/* Input Section */
+
+.row #section2.right .message_form {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 30px;
+}
+
+.row #section2.right .input_item {
+  margin: 18px 0px;
+  position: relative;
+}
+
+.message_form .half_width {
+  flex-basis: 48%;
+}
+
+.message_form .full_width {
+  flex-basis: 100%;
+}
+.message_form input,
+.message_form textarea {
+  width: 100%;
+  font-size: 18px;
+  padding: 2px 0px;
+  background-color: #fff;
+  color: #858282;
+  border: none;
+  border-bottom: 2px solid #666;
+  outline: none;
+}
+.message_form textarea {
+  resize: none;
+  height: 220px;
+  display: block;
+}
+
+.input_item label {
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  color: #888;
+  font-size: 18px;
+  transition: 0.4s;
+  pointer-events: none;
+}
+.input_item:nth-child(4) label {
+  top: 2px;
+}
+.input_item input:focus ~ label,
+.input_item textarea:focus ~ label,
+.input_item input:valid ~ label,
+.input_item textarea:valid ~ label {
+  transform: translateY(-30px);
+  font-size: 16px;
+}
+.input_item button {
+  padding: 8px 16px;
+  font-size: 18px;
+  background-color: #ff4500;
+  color: #fff;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+  transition: 0.4s;
+}
+.input_item button:hover {
+  background-color: #2e2e2e;
+  color: #fff;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (min-width: 768px) {
+  .message_form {
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .message_form .full_width {
+    flex-basis: 48%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .row #section2.right .message_form {
+    flex-direction: column; /* Stack inputs vertically */
+  }
+
+  .message_form .input_item {
+    flex-basis: 100%; /* Make each input take up full width */
+  }
+}
+
+/* Additional media query for even larger screens */
+@media screen and (min-width: 1200px) {
+  .row #section1.left {
+    flex-basis: 30%;
+    min-width: 320px;
+    margin-right: 60px;
+  }
+
+  .row #section2.right {
+    flex-basis: 60%;
+    margin-left: 70px;
+    margin-right: 70px;
+  }
+}

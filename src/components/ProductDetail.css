@@ -1,0 +1,92 @@
+#border-image {
+    margin-top: 15%;
+    float: left;
+    width: 35%;
+  }
+  
+  #text-div {
+    margin-top: 10%;
+    float: right;
+    width: 60%;
+    padding-top: 10%;
+  }
+  
+  .detail_image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .sub_head {
+    font-weight: 10;
+    padding-bottom: 10px;
+    text-align: left;
+  }
+  
+  .top_head {
+    padding-bottom: 10px;
+    text-align: left;
+    font-size: 30px;
+  }
+  
+  .down_head {
+    padding-bottom: 10px;
+  }
+  
+  .description {
+    color: grey;
+    text-align: left;
+    padding-bottom: 10px;
+  }
+  
+  .my-button {
+    color: #fff !important;
+    text-decoration: none;
+    background: orangered;
+    font-size: 20px;
+    position: relative;
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block;
+    border: none;
+    transition: all 0.4s ease 0s;
+  }
+  
+  .my-button:hover {
+    text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+    transition: all 0.4s ease 0s;
+  }
+  
+  /* Media queries for responsive design */
+  
+  @media only screen and (max-width: 768px) {
+    #border-image {
+      float: none;
+      width: 100%;
+      margin-top: 80px;
+    }
+  
+    #text-div {
+      float: none;
+      width: 100%;
+      margin-bottom: 120px;
+      margin: 20px;
+    }
+  
+    .my-button {
+      font-size: 16px;
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .top_head {
+      font-size: 24px;
+    }
+  
+    .my-button {
+      font-size: 14px;
+    }
+  }
+  
