@@ -20,7 +20,7 @@ function ProductTable({ products, searchText, selectedAlphabet }) {
     // Fetch products when searchText or selectedAlphabet changes
     async function fetchProducts() {
       try {
-        console.log("Fetching products...");
+        // console.log("Fetching products...");
         let response;
         let query = {
           content_type: "productPage",
@@ -29,7 +29,7 @@ function ProductTable({ products, searchText, selectedAlphabet }) {
           skip: (currentPage - 1) * productsPerPage,
         };
 
-        console.log("Number of products:", products.length);
+        // console.log("Number of products:", products.length);
 
         response = await client.getEntries(query);
 
@@ -66,6 +66,13 @@ function ProductTable({ products, searchText, selectedAlphabet }) {
     setCurrentPage(newPage);
   };
 
+  const limitCompositionName = (composition) => {
+    if (composition.length > 24) {
+      return composition.substring(0, 24) + "...";
+    }
+    return composition;
+  };
+
   return (
     <div>
       <table>
@@ -88,7 +95,7 @@ function ProductTable({ products, searchText, selectedAlphabet }) {
                   {product.fields.title}
                 </Link>
               </td>
-              <td>{product.fields.composition}</td>
+              <td>{limitCompositionName(product.fields.composition)}</td>
               <td>{product.fields.packing}</td>
               <td>{product.fields.category}</td>
             </tr>
